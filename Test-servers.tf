@@ -5,5 +5,5 @@ resource "aws_instance" "test-nodes" {
   instance_type   = "t3.micro"
   key_name        = aws_key_pair.ec2loginkey.key_name
   security_groups = ["ssh"]
-  user_data       = file("user-data-ansible-nodes.sh")
+  user_data       = file("cloudinit")
 }
