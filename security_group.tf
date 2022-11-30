@@ -1,19 +1,11 @@
-resource "aws_security_group" "ansible_access" {
-  name        = "ansible-lab-sg"
+resource "aws_security_group" "ssh_access" {
+  name        = "ssh"
   description = "Created by Terraform for SSH Access"
 
   ingress {
     description = "SSH Access"
     from_port   = 22
     to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "HTTP Access"
-    from_port   = 80
-    to_port     = 80
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
